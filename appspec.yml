@@ -1,10 +1,11 @@
+
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /web/
+  - source: /index.html
+    destination: /var/www/html/
 hooks:
-  AfterInstall:
+  BeforeInstall:
     - location: scripts/mkdir.sh
       timeout: 300
       runas: root

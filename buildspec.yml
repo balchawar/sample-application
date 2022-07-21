@@ -1,30 +1,15 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-    - mkdir myproject
-    - cd myproject
-    - python3 -m venv venv
-    - . venv/bin/activate
-    # Install pip
-     # - sudo apt-get install python-pip
-      - pip install Flask
+  pre_build:
+   commands:
+       - echo "creating test1 folder"
+       - mkdir -p ./test1/
   build:
     commands:
-      - echo Build started on `date`
-      - echo Compiling the Python code...
-      - python test_app.py
-  post_build:
-    commands:
-      - echo Build completed on `date`
+        - echo "Copying the file"
+        - cp index.html ./test1/
 artifacts:
-  files:
-    - web.py
-    - appspec.yml
-    - templates/layout.html
-    - templates/test.html
-    - scripts/mkdir.sh
-    - scripts/start_flask.sh
-    - scripts/stop_flask1.sh
-    - scripts/stop_flask.py
+   files:
+      - test1/**/*
+      - appspec.yml
