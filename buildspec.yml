@@ -4,7 +4,7 @@ phases:
   install:
     commands:
     # Install pip
-        - sudo apt install python-pip
+        #- sudo apt install python-pip
          # Install dependencies needed for running tests
         - npm install
         - python -m pip install Flask
